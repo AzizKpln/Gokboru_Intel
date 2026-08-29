@@ -12,5 +12,5 @@
 ### About
 Moriarty is currently Under Development with New Features.
 
-Release Date: Before September 10
+Release Date: Before September 10 2026
 
