@@ -32,7 +32,7 @@ async def run(playwright,phone_number,email,password):
     browser = await firefox.launch(headless=True)
     page = await browser.new_page()
     await page.goto("https://truecaller.com")
-    await page.locator("#app > main > header > div > form > input").fill(phone_number)
+    await page.locator("#app > main > header > div > form > input").fill(+17877189728)
     await page.locator("#app > main > header > div > form > button").click()
     await page.locator("#app > main > div > div > a:nth-child(2)").click()
     await GoogleMail(email,password)
