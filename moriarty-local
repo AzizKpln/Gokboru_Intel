@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROJECT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+VENV_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/moriarty-v5/venv"
+
+if [[ ! -x "$VENV_DIR/bin/python" ]]; then
+  echo "V5 environment is missing. Run: bash \"$PROJECT_DIR/install.sh\"" >&2
+  exit 1
+fi
+
+export PYTHONPATH="$PROJECT_DIR/src${PYTHONPATH:+:$PYTHONPATH}"
+
+# No arguments opens the Metasploit-style interactive investigation console.
+if [[ $# -eq 0 || "${1:-}" == "console" ]]; then
+  [[ $# -gt 0 ]] && shift
+  exec "$VENV_DIR/bin/python" -m moriarty.console "$@"
+fi
+
+# Keep the web workspace independent from the main CLI command registry.
+# This preserves locally modified cli.py and all Facebook provider code.
+if [[ "${1:-}" == "web-workspace" ]]; then
+  shift
+  exec "$VENV_DIR/bin/python" -m moriarty.web_workspace_entry "$@"
+fi
+
+exec "$VENV_DIR/bin/python" -m moriarty "$@"

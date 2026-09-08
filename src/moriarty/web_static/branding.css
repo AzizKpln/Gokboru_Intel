@@ -1,0 +1,47 @@
+:root{
+  --red:#e31e32;
+  --red2:#8d0d1c;
+  --blue:#2488d8;
+  --gold:#e9b92f;
+  --panel:#111722;
+  --panel2:#172131;
+  --line:#29364a;
+}
+
+body{
+  background:
+    radial-gradient(circle at 72% 34%,rgba(34,118,196,.13),transparent 31%),
+    radial-gradient(circle at 30% 68%,rgba(213,24,45,.18),transparent 34%),
+    #070a10;
+}
+
+.icon-rail,.command-header,.source-dock,.detail-dock{background-color:rgba(8,12,19,.96)}
+.command-header{border-bottom-color:#3c1d2a;box-shadow:0 9px 34px #000b,0 1px 0 #da263844}
+.source-dock{border-right-color:#352130}.detail-dock{border-left-color:#253951}
+.target-command{border-color:#35465d;background:linear-gradient(120deg,#141b27,#16141b)}
+.investigate{background:linear-gradient(135deg,#ed2b40,#8d0d1c);box-shadow:0 8px 26px #e31e3240}
+.preset-bar button.active{background:linear-gradient(135deg,#49151f,#1c2740);border-color:#a92839}
+.graph-viewport{background-color:#070b12}
+.graph-viewport:after{background-image:radial-gradient(#4d82af25 1px,transparent 1px),linear-gradient(90deg,#05080ddd,#19080cc7);}
+.flag-glow{background:radial-gradient(circle at 67% 43%,#1576bd25,transparent 32%),radial-gradient(circle at 48% 50%,#c5162828,transparent 48%)}
+.graph-node{border-color:#34465c;background:linear-gradient(145deg,#151d29ee,#11151cee)}
+.graph-node.finding{border-top-color:#ed253b}.graph-node.clear{border-top-color:#258bc5}
+.graph-edge{stroke:#9b2738}.graph-edge.clear{stroke:#256b9e}
+
+.brand-logo{padding:0!important;overflow:hidden;background:#07101b!important;border-color:#315b7d!important;box-shadow:0 0 0 1px #db233955,0 10px 28px #000b!important}
+.brand-logo img{display:block;width:100%;height:100%;object-fit:cover}
+.product{min-width:300px}
+.product-logo{width:38px;height:38px;object-fit:cover;border-radius:10px;border:1px solid #345b7b;box-shadow:0 0 0 1px #b31a2d,0 7px 20px #000a}
+.product>div span{color:#fff;text-shadow:0 0 18px #2386cd55}
+.product>div b{color:#ed2d40}
+.rail-contact{width:40px;height:28px;display:grid;place-items:center;border:1px solid #2e3c50;border-radius:7px;background:#121925;color:#6fb3e8;text-decoration:none;font-size:8px;font-weight:800;transition:.2s}
+.rail-contact:hover{border-color:#dc283b;background:#2b1119;color:#fff;box-shadow:0 0 16px #d51f2b33}
+.author-links{gap:10px!important;max-width:58%;overflow:hidden}
+.author-links strong{color:#e52a3c;font-size:7px;letter-spacing:1px}
+.author-links a{color:#6ca8d8;text-decoration:none;white-space:nowrap}
+.author-links a:hover{color:#fff}
+.canvas-status{height:28px;border-top-color:#2d3d51;background:#080c13}
+.graph-viewport{inset:0 0 28px}
+
+@media(max-width:1250px){.author-links a{display:none}.product{min-width:220px}}
+@media(max-width:760px){.product-logo,.author-links{display:none}.rail-contact{width:34px}}

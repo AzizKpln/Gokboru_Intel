@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moriarty-v5"
+version = "0.1.0"
+description = "Modular public-data investigation toolkit"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["phonenumbers>=8.13,<10", "pypdf>=5,<7", "dnspython>=2.6,<3", "Pillow>=10,<13", "zxing-cpp>=2.2,<3", "playwright>=1.49,<2", "telethon>=1.36,<2", "textual>=0.89,<2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+moriarty = "moriarty.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+moriarty = ["web_static/*"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
