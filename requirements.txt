@@ -1,8 +1,0 @@
-flask
-gevent
-bs4
-requests
-phonenumbers
-pytz
-playwright
-pyvirtualdisplay
